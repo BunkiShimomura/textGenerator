@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% block body %}
+<header>
+  <h1>Text Generator</h1>
+</header>
+<div class="search_window">
+
+  <form action="{% url 'results' %}" method="get">
+          <label>名前:<input type="text" size="20" name="your_name"></label>
+          <input type="submit" value="送信">
+  </form>
+
+  {% if your_name %}
+      {{ your_name }}さん、こんにちは。
+  {% endif %}
+</div>
   {% block content %}
   {% endblock %}
 {% endblock %}
